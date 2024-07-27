@@ -33,7 +33,8 @@ export const createWepbackConfig = (
     resolve: {
       extensions: [".tsx", ".ts", ".js"],
     },
-    devtool: isDevBuild && "inline-source-map",
+    // devtool: isDevBuild && "inline-source-map",
+    devtool: "inline-source-map", // test source map
   };
 
   return config;
