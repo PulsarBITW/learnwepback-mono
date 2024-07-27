@@ -1,0 +1,44 @@
+{
+  "name": "something",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PulsarBITW/something.git"
+  },
+  "keywords": [],
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve",
+    "build:dev": "webpack --env mode=development",
+    "build:prod": "webpack --env mode=production"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PulsarBITW/something/issues"
+  },
+  "homepage": "https://github.com/PulsarBITW/something#readme",
+  "devDependencies": {
+    "@types/node": "^20.14.12",
+    "@types/react-dom": "^18.3.0",
+    "@types/webpack": "^5.28.5",
+    "@types/webpack-dev-server": "^4.7.2",
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.0",
+    "mini-css-extract-plugin": "^2.9.0",
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4",
+    "webpack": "5.88.2",
+    "webpack-cli": "5.1.4",
+    "webpack-dev-server": "4.15.1"
+  },
+  "dependencies": {
+    "effector": "23.2.2",
+    "effector-react": "23.2.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-router-dom": "5.3.4"
+  }
+}
