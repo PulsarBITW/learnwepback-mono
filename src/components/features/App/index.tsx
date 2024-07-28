@@ -4,7 +4,7 @@ interface UserInfo {
   name: string;
   about: string;
 }
-
+//
 export const App = () => {
   const [userInfo, userInfoChanged] = useState<UserInfo>({
     name: "",
