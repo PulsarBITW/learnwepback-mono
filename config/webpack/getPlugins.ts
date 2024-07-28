@@ -13,8 +13,5 @@ export const getPlugins = (options: ConfigOptions) => {
     chunkFilename: "css/[name].[contenthash].css",
   });
 
-  return [
-    htmlWebpackPlugin,
-    //  miniCssExtractPlugin
-  ];
+  return [htmlWebpackPlugin, miniCssExtractPlugin];
 };

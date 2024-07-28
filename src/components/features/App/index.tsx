@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import classes from "./styled.module.css";
+import * as classes from "./styled.module.css";
 interface UserInfo {
   name: string;
   about: string;

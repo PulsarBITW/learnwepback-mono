@@ -10,38 +10,10 @@ export const getLoaders = (): ModuleOptions["rules"] => {
 
   // TODO разобраться с css module
 
-  // const cssLoader = {
-  //   test: /\.css$/i,
-  //   loader: "css-loader",
-  //   options: {
-  //     modules: {
-  //       mode: "local",
-  //       auto: true,
-  //       exportGlobals: true,
-  //       localIdentName: "[path][name]__[local]--[hash:base64:5]",
-  //     },
-  //   },
-  // };
-
-  const test1 = {
-    test: /\.module.css$/,
-    use: [
-      {
-        loader: "css-loader",
-        options: {
-          modules: true,
-        },
-      },
-    ],
+  const allCssLoaders = {
+    test: /\.css$/i,
+    use: [MiniCssExtractPlugin.loader, "css-loader"],
   };
 
-  // const allCssLoaders = {
-  //   test: /\.css$/i,
-  //   use: [
-  //     // MiniCssExtractPlugin.loader,
-  //     "css-loader",
-  //   ],
-  // };
-
-  return [tsLoader, test1];
+  return [tsLoader, allCssLoaders];
 };
