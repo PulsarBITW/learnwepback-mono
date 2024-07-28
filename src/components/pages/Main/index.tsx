@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import * as classes from "./styled.module.css";
+import * as classes from "./styled.module.css"; // todo - fix, * as classes -> import classes from "..."
 
 interface UserInfo {
   name: string;
   about: string;
 }
 //
-export const App = () => {
+export const Main = () => {
   const [userInfo, userInfoChanged] = useState<UserInfo>({
     name: "",
     about: "",

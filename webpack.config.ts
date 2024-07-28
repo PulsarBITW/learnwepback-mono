@@ -8,6 +8,9 @@ import {
 import { createWepbackConfig } from "./config/webpack/createWebpackConfig";
 
 export default (env: EnvironmentVariables) => {
+  const isDevBuild = env.mode === "development";
+  const isProdBuild = env.mode === "production";
+
   const paths: ConfigPaths = {
     entry: path.resolve(__dirname, "src", "index.tsx"),
     output: path.resolve(__dirname, "build"),
@@ -18,6 +21,8 @@ export default (env: EnvironmentVariables) => {
     mode: env.mode ?? "development",
     port: env.port ?? "3000",
     paths,
+    isDevBuild,
+    isProdBuild,
   });
 
   return config;

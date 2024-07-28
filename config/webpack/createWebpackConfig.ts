@@ -1,8 +1,5 @@
 import webpack from "webpack";
-import type {
-  Configuration as DevServerConfiguration,
-  WebpackConfiguration,
-} from "webpack-dev-server";
+import type { WebpackConfiguration } from "webpack-dev-server";
 
 import path from "path"; // модуль для обработки путей
 
@@ -14,9 +11,6 @@ import { ConfigOptions } from "./types/types";
 export const createWepbackConfig = (
   options: ConfigOptions
 ): WebpackConfiguration => {
-  const isDevBuild = options.mode === "development";
-  const isProdBuild = options.mode === "production";
-
   const config: webpack.Configuration = {
     mode: options.mode ?? "development",
     entry: options.paths.entry,
@@ -26,14 +20,14 @@ export const createWepbackConfig = (
       clean: true, // Удаление старых билдов
     },
     module: {
-      rules: getLoaders(),
+      rules: getLoaders(options),
     },
     plugins: getPlugins(options),
     devServer: getDevServer(options),
     resolve: {
       extensions: [".tsx", ".ts", ".js"],
     },
-    devtool: isDevBuild && "inline-source-map",
+    devtool: options.isDevBuild && "inline-source-map",
   };
 
   return config;

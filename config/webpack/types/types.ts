@@ -14,4 +14,7 @@ export interface EnvironmentVariables {
   paths: ConfigPaths;
 }
 
-export interface ConfigOptions extends EnvironmentVariables {}
+export interface ConfigOptions extends EnvironmentVariables {
+  isDevBuild: boolean;
+  isProdBuild: boolean;
+}
