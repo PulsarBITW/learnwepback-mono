@@ -12,6 +12,7 @@ export interface EnvironmentVariables {
   mode: ConfigMode;
   port: DevServerConfiguration["port"];
   paths: ConfigPaths;
+  BASE_URL?: string;
 }
 
 export interface ConfigOptions extends EnvironmentVariables {

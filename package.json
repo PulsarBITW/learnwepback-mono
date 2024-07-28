@@ -12,7 +12,8 @@
     "start": "webpack serve",
     "build:dev": "webpack --env mode=development",
     "build:prod": "webpack --env mode=production",
-    "deploy": "npm run build:prod && gh-pages -d build"
+    "build:deploy": "webpack --env mode=production BASE_URL=/something",
+    "deploy": "npm run build:deploy && gh-pages -d build"
   },
   "author": "",
   "license": "ISC",

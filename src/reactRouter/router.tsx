@@ -30,6 +30,6 @@ export const router = createBrowserRouter(
     },
   ],
   {
-    // basename: process.env.BASE_URL ? process.env.BASE_URL : undefined, //add env in webpack
+    basename: process.env.BASE_URL ? process.env.BASE_URL : undefined, //add env in webpack
   }
 );

@@ -18,6 +18,7 @@ export default (env: EnvironmentVariables) => {
   };
 
   const config: webpack.Configuration = createWepbackConfig({
+    ...env,
     mode: env.mode ?? "development",
     port: env.port ?? "3000",
     paths,
