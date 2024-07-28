@@ -23,10 +23,25 @@ export const getLoaders = (): ModuleOptions["rules"] => {
   //   },
   // };
 
-  const allCssLoaders = {
-    test: /\.css$/i,
-    use: [MiniCssExtractPlugin.loader, "css-loader"],
+  const test1 = {
+    test: /\.module.css$/,
+    use: [
+      {
+        loader: "css-loader",
+        options: {
+          modules: true,
+        },
+      },
+    ],
   };
 
-  return [tsLoader, allCssLoaders];
+  // const allCssLoaders = {
+  //   test: /\.css$/i,
+  //   use: [
+  //     // MiniCssExtractPlugin.loader,
+  //     "css-loader",
+  //   ],
+  // };
+
+  return [tsLoader, test1];
 };
