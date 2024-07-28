@@ -8,11 +8,16 @@ export const getLoaders = (): ModuleOptions["rules"] => {
     exclude: /node_modules/,
   }; // ts loader из коробки умеет обращаться с jsx, если бы его не было то нужно было бы настроить babel-loader
 
-  // TODO разобраться с css module
+  const cssModuleLoader = {
+    loader: "css-loader",
+    options: {
+      modules: true,
+    },
+  };
 
   const allCssLoaders = {
-    test: /\.css$/i,
-    use: [MiniCssExtractPlugin.loader, "css-loader"],
+    test: /\.css$/i, // регулярное выражение для всех лоадеров из use
+    use: [MiniCssExtractPlugin.loader, cssModuleLoader],
   };
 
   return [tsLoader, allCssLoaders];
