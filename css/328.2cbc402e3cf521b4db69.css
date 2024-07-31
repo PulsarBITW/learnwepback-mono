@@ -16,12 +16,15 @@
   padding: 10px;
   border-radius: 4px;
   border: 2px solid grey;
+
+  display: flex;
+  word-break: break-all;
 }
 
 .iCc2JyEEHoKuV_dW {
-  padding-top: 40px;
   display: flex;
   gap: 10px;
+  margin-bottom: 40px;
 }
 .s5rsjw_3GnfENin_ {
   font-size: 20px;
