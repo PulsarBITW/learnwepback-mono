@@ -1,13 +1,22 @@
-import React, { Suspense } from "react";
+import React, { ReactNode, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 
-import { Main } from "../components/pages/Main";
-import { PostsPage } from "../components/pages/PostsPage";
-import { CreatePostPage } from "../components/pages/CreatePost";
-import { Layout } from "../components/features/Layout";
-import { LazyCounter } from "../components/pages/Counter";
 import { ROUTES } from "./routes";
-import Spinner from "../components/features/Spinner";
+import { Main } from "@/components/pages/Main";
+import { PostsPage } from "@/components/pages/PostsPage";
+import { CreatePostPage } from "@/components/pages/CreatePost";
+import { Layout } from "@/components/features/Layout";
+import { LazyCounter } from "@/components/pages/Counter";
+import { LazyGallery } from "@/components/pages/Gallery";
+import Spinner from "@/components/features/Spinner";
+
+const getLazyElement = (element: JSX.Element, customSpinner?: ReactNode) => {
+  return (
+    <Suspense fallback={customSpinner ? customSpinner : <Spinner />}>
+      {element}
+    </Suspense>
+  );
+};
 
 export const router = createBrowserRouter(
   [
@@ -20,11 +29,11 @@ export const router = createBrowserRouter(
         { path: ROUTES.CREATE_POST_PAGE, element: <CreatePostPage /> },
         {
           path: ROUTES.LAZY_COUNTER_PAGE,
-          element: (
-            <Suspense fallback={<Spinner />}>
-              <LazyCounter />
-            </Suspense>
-          ),
+          element: getLazyElement(<LazyCounter />),
+        },
+        {
+          path: ROUTES.LAZY_GALLERY,
+          element: getLazyElement(<LazyGallery />),
         },
       ],
     },

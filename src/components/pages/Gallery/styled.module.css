@@ -1,0 +1,10 @@
+.imageListContainer {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.title {
+  text-align: center;
+  margin: 10px 0;
+}

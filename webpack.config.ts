@@ -15,12 +15,14 @@ export default (env: EnvironmentVariables) => {
     entry: path.resolve(__dirname, "src", "index.tsx"),
     output: path.resolve(__dirname, "build"),
     indexHtml: path.resolve(__dirname, "public", "index.html"),
+    src: path.resolve(__dirname, "src"),
   };
 
   const config: webpack.Configuration = createWepbackConfig({
     ...env,
     mode: env.mode ?? "development",
     port: env.port ?? "3000",
+    showAnalyzer: env.showAnalyzer ? env.showAnalyzer : false,
     paths,
     isDevBuild,
     isProdBuild,

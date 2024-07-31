@@ -2,10 +2,12 @@ import React from "react";
 import * as classes from "./styled.module.css";
 
 import { NavLink, Outlet } from "react-router-dom";
-import { ROUTES_DATA } from "../../../reactRouter/routes";
-import { createCN } from "../../../utils/createClassName";
+import { ROUTES_DATA } from "@/reactRouter/routes";
+import { createCN } from "@/utils/createClassName";
 
 export const Layout = () => {
+  // TODO fix url for pg deploy
+  console.log("BASE_URL equals", process.env.BASE_URL);
   return (
     <div>
       <div className={classes.linksContainer}>

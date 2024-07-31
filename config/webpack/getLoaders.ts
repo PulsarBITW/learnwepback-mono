@@ -23,10 +23,23 @@ export const getLoaders = (options: ConfigOptions): ModuleOptions["rules"] => {
     },
   };
 
+  const assetLoader: RuleSetRule = {
+    test: /\.(png|jpg|jpeg|gif)$/i,
+    type: "asset/resource",
+  };
+
+  // Убрать svg из assetLoader
+  const svgrLoader: RuleSetRule = {
+    test: /\.svg$/i,
+    use: [
+      { loader: "@svgr/webpack", options: { icon: true } }, // icon true позволяет работать с svg как с иконками и менять размер содержимого а не контейнера, <AwardsSvg width={250} height={250} />, - даст содержимому 250 250
+    ],
+  };
+
   const CssLoaders: RuleSetRule = {
     test: /\.css$/i, // регулярное выражение для всех лоадеров из use
     use: [MiniCssExtractPlugin.loader, cssModuleLoader],
   };
 
-  return [tsLoader, CssLoaders];
+  return [tsLoader, CssLoaders, assetLoader, svgrLoader];
 };

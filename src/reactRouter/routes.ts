@@ -3,6 +3,7 @@ export enum ROUTES {
   POSTS_PAGE = "/posts",
   CREATE_POST_PAGE = "/create-post",
   LAZY_COUNTER_PAGE = "/counter-lazy",
+  LAZY_GALLERY = "/gallery",
 }
 
 export const ROUTES_DATA = [
@@ -10,4 +11,5 @@ export const ROUTES_DATA = [
   { to: ROUTES.POSTS_PAGE, name: "Посты" },
   { to: ROUTES.CREATE_POST_PAGE, name: "Создать пост" },
   { to: ROUTES.LAZY_COUNTER_PAGE, name: "Счетчик (lazy)" },
+  { to: ROUTES.LAZY_GALLERY, name: "Картинки" },
 ];

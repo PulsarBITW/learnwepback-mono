@@ -26,6 +26,9 @@ export const createWepbackConfig = (
     devServer: getDevServer(options),
     resolve: {
       extensions: [".tsx", ".ts", ".js"],
+      alias: {
+        "@": options.paths.src,
+      },
     },
     devtool: options.isDevBuild && "inline-source-map",
   };
