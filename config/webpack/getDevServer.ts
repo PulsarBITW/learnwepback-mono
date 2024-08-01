@@ -8,5 +8,6 @@ export const getDevServer = (
     port: options.port ?? "3000",
     open: true,
     historyApiFallback: true,
+    hot: options.isDevBuild,
   };
 };

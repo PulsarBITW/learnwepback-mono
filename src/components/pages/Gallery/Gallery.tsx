@@ -28,7 +28,6 @@ const Card = ({ src, title }: ImageItem) => {
   return (
     <div>
       <h3 className={classes.title}>{title ? title : "Без названия"}</h3>
-      {/* typeof ??? */}
       {typeof src === "string" ? <img src={src} /> : <>{src}</>}
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { ReactNode, Suspense } from "react";
+import { ReactNode, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 
 import { ROUTES } from "./routes";

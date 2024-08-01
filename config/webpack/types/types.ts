@@ -5,6 +5,7 @@ export interface ConfigPaths {
   entry: string;
   output: string;
   indexHtml: string;
+  public: string;
   src: string;
 }
 export type ConfigMode = webpack.Configuration["mode"];

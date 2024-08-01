@@ -1,3 +1,4 @@
+// import React from "react";
 import * as classes from "./styled.module.css";
 
 const Spinner = () => {

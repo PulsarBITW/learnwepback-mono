@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import * as classes from "./styled.module.css";
 
 import { NavLink, Outlet } from "react-router-dom";
@@ -8,6 +8,8 @@ import { createCN } from "@/utils/createClassName";
 export const Layout = () => {
   // TODO fix url for pg deploy
   console.log("BASE_URL equals", process.env.BASE_URL);
+  console.log("BUILD_MODE equals", process.env.BUILD_MODE);
+
   return (
     <div>
       <div className={classes.linksContainer}>
