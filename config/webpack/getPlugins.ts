@@ -10,7 +10,7 @@ import { ConfigOptions } from "./types/types";
 export const getPlugins = (
   options: ConfigOptions
 ): webpack.Configuration["plugins"] => {
-  let plugins: webpack.Configuration["plugins"] = [];
+  const plugins: webpack.Configuration["plugins"] = [];
 
   const environmentPlugin = new EnvironmentPlugin({
     BASE_URL: options.BASE_URL ? "/something" : null,
