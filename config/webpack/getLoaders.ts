@@ -21,23 +21,23 @@ export const getLoaders = (options: ConfigOptions): ModuleOptions["rules"] => {
     },
   };
 
-  const tsLoader: RuleSetRule = {
-    test: /\.tsx?$/,
-    use: [
-      {
-        loader: "ts-loader",
-        options: {
-          getCustomTransformers: () => ({
-            transpileOnly: options.isDevBuild,
-            before: [options.isDevBuild && ReactRefreshTypeScript()].filter(
-              Boolean
-            ),
-          }),
-        },
-      },
-    ],
-    exclude: /node_modules/,
-  }; // ts loader из коробки умеет обращаться с jsx, если бы его не было то нужно было бы настроить babel-loader
+  // const tsLoader: RuleSetRule = {
+  //   test: /\.tsx?$/,
+  //   use: [
+  //     {
+  //       loader: "ts-loader",
+  //       options: {
+  //         getCustomTransformers: () => ({
+  //           transpileOnly: options.isDevBuild,
+  //           before: [options.isDevBuild && ReactRefreshTypeScript()].filter(
+  //             Boolean
+  //           ),
+  //         }),
+  //       },
+  //     },
+  //   ],
+  //   exclude: /node_modules/,
+  // }; // ts loader из коробки умеет обращаться с jsx, если бы его не было то нужно было бы настроить babel-loader
 
   const cssModuleLoader: RuleSetRule = {
     loader: "css-loader",

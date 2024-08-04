@@ -9,6 +9,7 @@ import { Layout } from "@/components/features/Layout";
 import { LazyCounter } from "@/components/pages/Counter";
 import { LazyGallery } from "@/components/pages/Gallery";
 import Spinner from "@/components/features/Spinner";
+import { LazyTodo } from "@/components/pages/todo";
 
 const getLazyElement = (element: JSX.Element, customSpinner?: ReactNode) => {
   return (
@@ -34,6 +35,10 @@ export const router = createBrowserRouter(
         {
           path: ROUTES.LAZY_GALLERY,
           element: getLazyElement(<LazyGallery />),
+        },
+        {
+          path: ROUTES.LAZY_TODO,
+          element: getLazyElement(<LazyTodo />),
         },
       ],
     },
