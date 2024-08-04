@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import * as classes from "./styled.module.css"
 
 type TodoItem = {
-    id: string ;
+    id: number ;
     title:string;
     description:string;
 }
@@ -13,8 +13,8 @@ type TodoPreview = Omit<TodoItem, "id">;
     const [todoList, todoListChanged] = useState<TodoItem[]>([])
 
     const addTodo = ()=> {
-        const lastId: string|undefined = todoList[todoList.length-1]?.id
-        todoListChanged(todoList.slice().concat([{...formValue, id: lastId ? lastId + 1 : "1" }]))
+        const lastId: number|undefined = todoList[todoList.length-1]?.id
+        todoListChanged(todoList.slice().concat([{...formValue, id: lastId ? lastId + 1 : 1 }]))
     }
 
     const formHandler = (e: React.ChangeEvent<HTMLInputElement>)=> {
