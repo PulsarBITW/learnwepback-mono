@@ -7,3 +7,5 @@ let result;
 result = ab + bc;
 
 const bcss = 'something changes';
+
+const newbcss = 'something changes';
