@@ -12,8 +12,8 @@ export const createWepbackConfig = (options: ConfigOptions): WebpackConfiguratio
     entry: options.paths.entry,
     output: {
       path: options.paths.output,
-      filename: '[name].[contenthash].js', // имя файла с билдом
-      clean: true, // Удаление старых билдов
+      filename: '[name].[contenthash].js',
+      clean: true,
     },
     module: {
       rules: getLoaders(options),
