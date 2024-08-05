@@ -12,7 +12,7 @@
     "start": "webpack serve --env mode=development",
     "build:dev": "webpack --env mode=development",
     "build:prod": "webpack --env mode=production",
-    "build:deploy": "webpack --env mode=production BASE_URL=/something",
+    "build:deploy": "webpack --env mode=production BASE_URL=/learnwepback-mono",
     "deploy": "npm run build:deploy && gh-pages -d build",
     "prepare": "husky"
   },
