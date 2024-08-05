@@ -23,11 +23,10 @@ const Gallery = () => {
     </div>
   );
 };
-
 const Card = ({src, title}: ImageItem) => {
   return (
     <div>
-      <h3 className={classes.title}>{title ? title : 'Без названия'}</h3>
+      <h3 className={classes.title}>{title || 'Без названия'}</h3>
       {typeof src === 'string' ? <img src={src} /> : <>{src}</>}
     </div>
   );

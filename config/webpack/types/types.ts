@@ -1,5 +1,5 @@
-import webpack from "webpack";
-import type { Configuration as DevServerConfiguration } from "webpack-dev-server";
+import webpack from 'webpack';
+import type {Configuration as DevServerConfiguration} from 'webpack-dev-server';
 
 export interface ConfigPaths {
   entry: string;
@@ -8,11 +8,11 @@ export interface ConfigPaths {
   public: string;
   src: string;
 }
-export type ConfigMode = webpack.Configuration["mode"];
+export type ConfigMode = webpack.Configuration['mode'];
 
 export interface EnvironmentVariables {
   mode: ConfigMode;
-  port: DevServerConfiguration["port"];
+  port: DevServerConfiguration['port'];
   paths: ConfigPaths;
   BASE_URL?: string;
   showAnalyzer?: boolean;

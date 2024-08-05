@@ -1,22 +1,18 @@
-import webpack from "webpack";
-import type { WebpackConfiguration } from "webpack-dev-server";
+import webpack from 'webpack';
+import type {WebpackConfiguration} from 'webpack-dev-server';
 
-import path from "path"; // модуль для обработки путей
+import {getPlugins} from './getPlugins';
+import {getDevServer} from './getDevServer';
+import {getLoaders} from './getLoaders';
+import {ConfigOptions} from './types/types';
 
-import { getPlugins } from "./getPlugins";
-import { getDevServer } from "./getDevServer";
-import { getLoaders } from "./getLoaders";
-import { ConfigOptions } from "./types/types";
-
-export const createWepbackConfig = (
-  options: ConfigOptions
-): WebpackConfiguration => {
+export const createWepbackConfig = (options: ConfigOptions): WebpackConfiguration => {
   const config: webpack.Configuration = {
-    mode: options.mode ?? "development",
+    mode: options.mode ?? 'development',
     entry: options.paths.entry,
     output: {
       path: options.paths.output,
-      filename: "[name].[contenthash].js", // имя файла с билдом
+      filename: '[name].[contenthash].js', // имя файла с билдом
       clean: true, // Удаление старых билдов
     },
     module: {
@@ -25,12 +21,12 @@ export const createWepbackConfig = (
     plugins: getPlugins(options),
     devServer: getDevServer(options),
     resolve: {
-      extensions: [".tsx", ".ts", ".js"],
+      extensions: ['.tsx', '.ts', '.js'],
       alias: {
-        "@": options.paths.src,
+        '@': options.paths.src,
       },
     },
-    devtool: options.isDevBuild && "inline-source-map",
+    devtool: options.isDevBuild && 'inline-source-map',
   };
 
   return config;

@@ -12,9 +12,8 @@ import Spinner from '@/components/features/Spinner';
 import {LazyTodo} from '@/components/pages/todo';
 
 const getLazyElement = (element: JSX.Element, customSpinner?: ReactNode) => {
-  return <Suspense fallback={customSpinner ? customSpinner : <Spinner />}>{element}</Suspense>;
+  return <Suspense fallback={customSpinner || <Spinner />}>{element}</Suspense>;
 };
-
 export const router = createBrowserRouter(
   [
     {
