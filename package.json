@@ -13,7 +13,12 @@
     "build:dev": "webpack --env mode=development",
     "build:prod": "webpack --env mode=production",
     "build:deploy": "webpack --env mode=production BASE_URL=/something",
-    "deploy": "npm run build:deploy && gh-pages -d build"
+    "deploy": "npm run build:deploy && gh-pages -d build",
+    "prepare": "husky",
+    "lint": "eslint . --ext js,jsx,ts,tsx -- report-unused-disable-directives --max-warnings 0"
+  },
+  "lint-staged":{
+    "src/**/*.{js,ts,jsx,tsx}": ["prettier --write"]
   },
   "author": "",
   "license": "ISC",
@@ -37,6 +42,9 @@
     "css-loader": "^7.1.2",
     "gh-pages": "^6.1.1",
     "html-webpack-plugin": "^5.6.0",
+    "husky": "9.1.4",
+    "lint-staged": "15.2.7",
+    "prettier": "3.3.2",
     "mini-css-extract-plugin": "^2.9.0",
     "react-refresh": "^0.14.2",
     "react-refresh-typescript": "^2.0.9",
