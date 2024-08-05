@@ -23,7 +23,7 @@ function compareFields(value, gitConfigKey) {
 
 // pre-commit
 function checkCongifBeforeCommit() {
-  const CONFIG = {
+  const config = {
     userEmail: process.env.USER_EMAIL,
     userName: process.env.USER_NAME,
   };
@@ -33,8 +33,7 @@ function checkCongifBeforeCommit() {
     userName: 'user.name',
   };
 
-  compareFields(CONFIG.userEmail, gitConfigKeys.userEmail);
-  compareFields(CONFIG.userName, gitConfigKeys.userName);
+  Object.keys(gitConfigKeys).forEach((el) => compareFields(config[el], gitConfigKeys[el]));
 }
 
 checkCongifBeforeCommit();
