@@ -1,2 +1,2 @@
-npx --no --silent customPrecommitScipts.js
+node checkCongifBeforeCommit.js
 npx lint-staged 
