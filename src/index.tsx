@@ -9,5 +9,6 @@ if (!rootHtml) {
     console.log('root is missing in DOM');
 } else {
     const reactRoot = ReactDOM.createRoot(rootHtml);
+
     reactRoot.render(<RouterProvider router={router} />);
 }
