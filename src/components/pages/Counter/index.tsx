@@ -1,3 +1,3 @@
-import { lazy } from "react";
+import {lazy} from 'react';
 
-export const LazyCounter = lazy(() => import("./Counter"));
+export const LazyCounter = lazy(() => import('./Counter'));

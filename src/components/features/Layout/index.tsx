@@ -1,14 +1,14 @@
 // import React from "react";
-import * as classes from "./styled.module.css";
+import * as classes from './styled.module.css';
 
-import { NavLink, Outlet } from "react-router-dom";
-import { ROUTES_DATA } from "@/reactRouter/routes";
-import { createCN } from "@/utils/createClassName";
+import {NavLink, Outlet} from 'react-router-dom';
+import {ROUTES_DATA} from '@/reactRouter/routes';
+import {createCN} from '@/utils/createClassName';
 
 export const Layout = () => {
   // TODO fix url for pg deploy
-  console.log("BASE_URL equals", process.env.BASE_URL);
-  console.log("BUILD_MODE equals", process.env.BUILD_MODE);
+  console.log('BASE_URL equals', process.env.BASE_URL);
+  console.log('BUILD_MODE equals', process.env.BUILD_MODE);
 
   return (
     <div>
@@ -17,10 +17,8 @@ export const Layout = () => {
           <NavLink
             key={el.to}
             to={el.to}
-            className={({ isActive }) =>
-              isActive
-                ? createCN([classes.navLink, classes.navLink_active])
-                : classes.navLink
+            className={({isActive}) =>
+              isActive ? createCN([classes.navLink, classes.navLink_active]) : classes.navLink
             }
           >
             {el.name}

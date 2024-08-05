@@ -1,3 +1,3 @@
-import { lazy } from "react";
+import {lazy} from 'react';
 
-export const LazyTodo= lazy(() => import("./Todo"));
+export const LazyTodo = lazy(() => import('./Todo'));

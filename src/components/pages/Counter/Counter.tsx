@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import * as classes from "./styled.module.css";
+import React, {useState} from 'react';
+import * as classes from './styled.module.css';
 
 const Counter = () => {
   const [count, countChanged] = useState<bigint>(BigInt(10));
@@ -7,16 +7,10 @@ const Counter = () => {
   return (
     <div className={classes.wrapper}>
       <div className={classes.buttonGroup}>
-        <button
-          className={classes.button}
-          onClick={() => countChanged(count - BigInt(1))}
-        >
+        <button className={classes.button} onClick={() => countChanged(count - BigInt(1))}>
           -
         </button>
-        <button
-          className={classes.button}
-          onClick={() => countChanged(count + BigInt(1))}
-        >
+        <button className={classes.button} onClick={() => countChanged(count + BigInt(1))}>
           +
         </button>
       </div>

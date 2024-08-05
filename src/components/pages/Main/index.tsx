@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import * as classes from "./styled.module.css"; // todo - fix, * as classes -> import classes from "..."
+import React, {useState} from 'react';
+import * as classes from './styled.module.css'; // todo - fix, * as classes -> import classes from "..."
 
 interface UserInfo {
   name: string;
@@ -8,12 +8,12 @@ interface UserInfo {
 //
 export const Main = () => {
   const [userInfo, userInfoChanged] = useState<UserInfo>({
-    name: "",
-    about: "",
+    name: '',
+    about: '',
   });
 
   const userInputsHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    userInfoChanged((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    userInfoChanged((prev) => ({...prev, [e.target.name]: e.target.value}));
   };
 
   return (
