@@ -10,7 +10,6 @@ function compareFields(value, gitConfigKey) {
   try {
     const gitConfigField = execSync(`git config ${gitConfigKey}`).toString().trim();
     console.log(`Поле ${gitConfigKey} =`, value);
-
     if (gitConfigField !== value) {
       console.error(`Для создания коммита поле ${gitConfigKey} должно быть равно`, value);
       process.exit(1);
@@ -24,16 +23,10 @@ function compareFields(value, gitConfigKey) {
 // pre-commit
 function checkCongifBeforeCommit() {
   const config = {
-    userEmail: process.env.USER_EMAIL,
-    userName: process.env.USER_NAME,
+    'user.email': process.env.USER_EMAIL,
+    'user.name': process.env.USER_NAME,
   };
-
-  const gitConfigKeys = {
-    userEmail: 'user.email',
-    userName: 'user.name',
-  };
-
-  Object.keys(gitConfigKeys).forEach((el) => compareFields(config[el], gitConfigKeys[el]));
+  Object.entries(config).forEach((el) => compareFields(el[1], el[0]));
 }
 
 checkCongifBeforeCommit();
