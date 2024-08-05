@@ -18,7 +18,7 @@
     "lint": "eslint . --ext js,jsx,ts,tsx -- report-unused-disable-directives --max-warnings 0"
   },
   "lint-staged":{
-    "src/**/*.{js,ts,jsx,tsx}": ["prettier --write --ignore-unknown"]
+    "src/**/*.{js,ts,jsx,tsx,json}": ["prettier --write --ignore-unknown"]
   },
   "author": "",
   "license": "ISC",
