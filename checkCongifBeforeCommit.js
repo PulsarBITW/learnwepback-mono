@@ -1,6 +1,11 @@
+require('dotenv').config({path: './.env.local'});
 const {execSync} = require('child_process');
 
 function checkUserEmail(email) {
+  if (!email || !email.length) {
+    console.error('userEmail не указан ');
+    process.exit(1);
+  }
   try {
     const gitConfigEmail = execSync('git config user.email').toString().trim();
 
@@ -16,6 +21,11 @@ function checkUserEmail(email) {
 }
 
 function checkUserName(name) {
+  if (!name || !name.length) {
+    console.error('userName не указан ');
+    process.exit(1);
+  }
+
   try {
     const gitConfigName = execSync('git config user.name').toString().trim();
     if (gitConfigName !== name) {
@@ -31,11 +41,12 @@ function checkUserName(name) {
 // pre-commit
 function checkCongifBeforeCommit() {
   const CONFIG = {
-    email: 'GordeyBITW@gmail.com',
-    userName: 'PulsarBITW',
+    userEmail: process.env.USER_EMAIL,
+    userName: process.env.USER_NAME,
   };
+  console.log('check config', CONFIG);
 
-  checkUserEmail(CONFIG.email);
+  checkUserEmail(CONFIG.userEmail);
   checkUserName(CONFIG.userName);
 }
 
