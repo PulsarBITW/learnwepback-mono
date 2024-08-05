@@ -9,10 +9,10 @@ function compareFields(value, gitConfigKey) {
 
   try {
     const gitConfigField = execSync(`git config ${gitConfigKey}`).toString().trim();
-    console.log(`Поле ${gitConfigField} = `, value);
+    console.log(`Поле ${gitConfigKey} =`, value);
 
     if (gitConfigField !== value) {
-      console.error(`Для создания коммита поле ${gitConfigKey} должно быть равно `, value);
+      console.error(`Для создания коммита поле ${gitConfigKey} должно быть равно`, value);
       process.exit(1);
     }
   } catch (error) {
