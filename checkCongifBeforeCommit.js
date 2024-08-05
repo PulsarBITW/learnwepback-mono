@@ -1,7 +1,7 @@
 require('dotenv').config({path: './.env.local'});
 const {execSync} = require('child_process');
 
-function compareFields(value, gitConfigKey) {
+function compareFields(gitConfigKey, value) {
   if (!value || !value.length) {
     console.error(`Значение для ${gitConfigKey} не указано в .env.local `);
     process.exit(1);
@@ -26,7 +26,7 @@ function checkCongifBeforeCommit() {
     'user.email': process.env.USER_EMAIL,
     'user.name': process.env.USER_NAME,
   };
-  Object.entries(config).forEach((el) => compareFields(el[1], el[0]));
+  Object.entries(config).forEach((el) => compareFields(...el));
 }
 
 checkCongifBeforeCommit();
