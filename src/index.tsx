@@ -11,15 +11,3 @@ if (!rootHtml) {
     const reactRoot = ReactDOM.createRoot(rootHtml);
     reactRoot.render(<RouterProvider router={router} />);
 }
-
-console.log('10');
-
-//
-
-//
-
-const a = {
-    abc: 1,
-
-    someting: 'info',
-};
